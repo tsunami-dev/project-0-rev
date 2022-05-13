@@ -78,16 +78,16 @@ while option != 0:
             print(f'i can\'t believe you! the {name} i knew would never turn down a fight! Ending 4/9')
             Collection.update_one({"user_name":name},{"$set": {"progress": "ending 4/9"} })
             quit()
-    else:
+        else:
             print(f'your not {name}, you get brought to jail Ending 5/9! ')
             Collection.update_one({"user_name":name},{"$set": {"progress": "ending 5/9"} })
             quit()
 
     if settings == 'the garden':   
         print(f'HEY!! {name} it\'s been a long time! ')
-        response:str == input (f'have you come to escape your duties again? YES/NO ')
-        if response:str == 'YES'
-        print (f'same old {name} rather relax then get work done ')
+        response:str = input (f'have you come to escape your duties again? YES/NO ')
+        if response == 'YES':
+            print (f'same old {name} rather relax then get work done ')
         transport = input('you fell asleep, you wake to the cool breeze of night, do you stay or go inside ')
         if transport == 'stay':
             print('you start to get hungry, but when you go to the door its locked, Ending 6/9')
@@ -98,8 +98,8 @@ while option != 0:
             Collection.update_one({"user_name":name},{"$set": {"progress": "ending 7/9"} })
             quit()
 
-        if response:str == 'NO'
-        print('oh! well then let me leave you to it!, Ending 8/9')
+        if response == 'NO':
+            print('oh! well then let me leave you to it!, Ending 8/9')
         Collection.update_one({"user_name":name},{"$set": {"progress": "ending 8/9"} })
         quit()
     else:
